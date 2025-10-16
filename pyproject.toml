@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aquifer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "feedparser>=6.0.12",
+    "requests>=2.32.5",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/aquifer"]
+sources = ["src"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/aquifer/py.typed"]
