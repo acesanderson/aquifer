@@ -205,12 +205,7 @@ def get_a_video_metadata_from_db() -> VideoMetadata:
 
 # Example usage
 if __name__ == "__main__":
-    # Option 1: Direct channel ID
-    channel_id = "UC_x5XG1OV2P6uZZ5FSM9Ttw"  # Example: Google Developers
-
-    # Option 2: From channel URL
-    # channel_url = 'https://www.youtube.com/@GoogleDevelopers'
-    # channel_id = get_channel_id_from_url(channel_url)
+    channel_id = get_channel_id_from_url(EXAMPLE_CHANNEL)
 
     print(f"Fetching videos from channel: {channel_id}")
     video_ids = get_all_videos_from_channel(channel_id)
