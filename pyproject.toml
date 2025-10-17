@@ -5,17 +5,24 @@ build-backend = "hatchling.build"
 [project]
 name = "aquifer"
 version = "0.1.0"
-description = "Add your description here"
+description = "Collect context, refreshing sources like RSS or YouTube etc."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "feedparser>=6.0.12",
     "requests>=2.32.5",
+    "siphon"
 ]
+
+# ── uv sources (local/editable deps) ───────────────────────────────────────────
+[tool.uv.sources]
+siphon = { path = "../siphon-project", editable = true }
+dbclients = { path = "../dbclients-project", editable = true }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/aquifer"]
 sources = ["src"]
+include = ["src/aquifer/py.typed"]
 
 [tool.hatch.build.targets.sdist]
 include = ["src/aquifer/py.typed"]
