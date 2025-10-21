@@ -44,7 +44,7 @@ from openai.types.responses.response_output_message import ResponseOutputMessage
 import os
 import time
 from rich.console import Console
-from pathlib import Path
+# from pathlib import Path
 
 console = Console()
 
@@ -52,13 +52,13 @@ console = Console()
 api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
-# Constants
-QUERY_STRING = (Path(__file__).parent / "query_string.jinja2").read_text()
-OBSIDIAN_PATH = os.getenv("OBSIDIAN_PATH")
-if not OBSIDIAN_PATH:
-    raise ValueError("OBSIDIAN_PATH environment variable is not set.")
-OBSIDIAN_RESEARCH_NOTE = Path(OBSIDIAN_PATH) / "OpenAI Research Example.md"
-assert Path(OBSIDIAN_PATH).exists(), "Obsidian path does not exist."
+# # Constants
+# QUERY_STRING = (Path(__file__).parent / "query_string.jinja2").read_text()
+# OBSIDIAN_PATH = os.getenv("OBSIDIAN_PATH")
+# if not OBSIDIAN_PATH:
+#     raise ValueError("OBSIDIAN_PATH environment variable is not set.")
+# OBSIDIAN_RESEARCH_NOTE = Path(OBSIDIAN_PATH) / "OpenAI Research Example.md"
+# assert Path(OBSIDIAN_PATH).exists(), "Obsidian path does not exist."
 
 
 # Progress spinner
@@ -70,7 +70,7 @@ def start_research_task(query: str) -> str:
                 {"role": "system", "content": "You are an expert research assistant."},
                 {
                     "role": "user",
-                    "content": QUERY_STRING,
+                    "content": query,
                 },
             ],
             tools=[
@@ -144,8 +144,7 @@ def retrieve_answer(response) -> str:
     return output
 
 
-if __name__ == "__main__":
-    response_id = start_research_task(QUERY_STRING)
+def research_query_with_openai(query: str) -> str:
+    response_id = start_research_task(query)
     response = get_research_task(response_id)
-    console.print(response.output)
-    _ = OBSIDIAN_RESEARCH_NOTE.write_text(retrieve_answer(response))
+    return retrieve_answer(response)

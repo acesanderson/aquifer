@@ -1,0 +1,89 @@
+{
+  "market_sizing": [
+    {
+      "query": "What is the global market size and growth rate (CAGR) for professional certification and digital credentialing from 2020-2027, broken down by price tiers ($0-100, $100-500, $500+) and industry sectors (tech, finance, healthcare, manufacturing)?"
+    },
+    {
+      "query": "What percentage of Fortune 500 companies have dedicated budgets for employee skill certification programs, what is the average annual spend per employee, and how has this changed since 2020?"
+    },
+    {
+      "query": "What are the unit economics for assessment-based vs. course-completion certificates, including average pricing, completion rates, and customer acquisition costs across major platforms?"
+    },
+    {
+      "query": "How much revenue do technology companies (Microsoft, Google, AWS, Salesforce) generate annually from their professional certification programs, and what are their profit margins?"
+    }
+  ],
+  "competitive_intelligence": [
+    {
+      "query": "What are Coursera's specific revenue-sharing percentages with Google, IBM, and Meta for Professional Certificate programs, and what additional benefits (marketing spend, co-selling) do these partners provide?"
+    },
+    {
+      "query": "Compare pricing strategies of major certificate providers: what do Coursera Professional Certificates, Google Career Certificates, AWS Certifications, and Salesforce Trailhead charge per credential, and what are their completion-to-payment conversion rates?"
+    },
+    {
+      "query": "What partnership deal structures exist in the EdTech industry for content licensing vs. co-creation vs. white-labeling, including typical revenue splits, minimum guarantees, and exclusivity terms?"
+    },
+    {
+      "query": "Which professional skills command the highest certification prices (above $500), what organizations control these markets, and what are their annual revenue figures?"
+    },
+    {
+      "query": "What percentage of Udemy, Coursera, and Pluralsight revenue comes from enterprise vs. individual learners, and how do their B2B pricing models differ from consumer pricing?"
+    }
+  ],
+  "enterprise_buyer_behavior": [
+    {
+      "query": "What are the top 5 criteria enterprise L&D buyers use when selecting skill validation vendors, how do they measure ROI, and what budget approval thresholds require C-level sign-off?"
+    },
+    {
+      "query": "What percentage of enterprise learning budgets is allocated to skill assessment/validation vs. content delivery, and how has this shifted toward validation since 2022?"
+    },
+    {
+      "query": "What are typical contract values and deal sizes for enterprise certification programs at companies with 1K-10K employees vs. 10K+ employees, including multi-year commitment rates?"
+    },
+    {
+      "query": "How do enterprises measure success of employee certification programs (promotion rates, retention, performance reviews), and what ROI benchmarks do they expect?"
+    }
+  ],
+  "market_gaps": [
+    {
+      "query": "Which high-demand skills (based on job posting volume) lack standardized, widely-accepted certification options, and what would be the estimated market value for credible certificates in these areas?"
+    },
+    {
+      "query": "What are the pricing and accessibility gaps in AI/ML, cybersecurity, and sustainability certifications that could be addressed by a subscription-based model vs. traditional per-exam pricing?"
+    },
+    {
+      "query": "Which geographic markets (APAC, EMEA, LatAm) have underserved demand for English-language professional certifications, and what are local competitors charging?"
+    },
+    {
+      "query": "What skills have the highest ratio of job demand to available certification options, measured by job postings requiring certification vs. number of certification providers?"
+    }
+  ],
+  "linkedin_advantage": [
+    {
+      "query": "What is the correlation between LinkedIn profile completeness (including skills/certifications) and recruiter InMail response rates, job application success rates, and salary negotiation outcomes?"
+    },
+    {
+      "query": "How much do professionals pay for career coaching, resume optimization, and job search services that could be partially replaced by skill validation and profile enhancement features?"
+    },
+    {
+      "query": "What percentage of LinkedIn Premium subscribers use the platform primarily for skill development vs. job searching vs. networking, and what are their average subscription lifetime values?"
+    },
+    {
+      "query": "What are the conversion rates from LinkedIn Learning engagement to LinkedIn Recruiter pipeline activity, and what revenue per qualified candidate do recruiters typically generate?"
+    }
+  ],
+  "ecosystem_monetization": [
+    {
+      "query": "What are typical customer lifetime values for integrated talent management platforms (Workday, SuccessFactors) that combine learning, performance, and recruiting, compared to point solutions?"
+    },
+    {
+      "query": "How much additional revenue do enterprise software platforms generate through cross-selling when they bundle learning with HRIS, ATS, or performance management tools?"
+    },
+    {
+      "query": "What percentage revenue uplift do freemium platforms achieve when offering premium skill validation features, and what are typical conversion rates from free to paid tiers?"
+    },
+    {
+      "query": "What are the unit economics for platforms that monetize both learner subscriptions and recruiter/employer access to certified candidate pools?"
+    }
+  ]
+}
