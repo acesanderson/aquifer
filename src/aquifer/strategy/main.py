@@ -44,7 +44,7 @@ def research_query(query: str) -> str:
 
 
 if __name__ == "__main__":
-    for index, prompt in enumerate(prompts[10:]):
+    for index, prompt in enumerate(prompts[11:]):
         print(f"Processing prompt {index + 1} of {len(prompts)}")
         full_prompt = construct_prompt(prompt)
         research_query(full_prompt)
