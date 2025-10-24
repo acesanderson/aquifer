@@ -6,13 +6,15 @@ from conduit.sync import (
     ConduitCache,
     Response,
 )
-# from pathlib import Path
+from pathlib import Path
 
 # PROMPT_FILE = Path(__file__).parent / "prompts.md"
 PREFERRED_MODEL = "sonar"
 VERBOSITY = Verbosity.COMPLETE
 CACHE = ConduitCache()
 Model.conduit_cache = CACHE
+
+SNAPSHOT_PROMPT_FILE = Path(__file__).parent.parent / "query_string.jinja2"
 
 system_prompt = """
 You are searching for news and developments from the past two weeks only (September 25 - October 9, 2025). Focus on factual announcements with specific details: company names, partnership terms, funding amounts, program launches, and pricing changes. Exclude opinion pieces, general trend articles, and speculation unless they contain hard data or named sources. Prioritize primary sources and official announcements.
