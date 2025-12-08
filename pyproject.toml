@@ -9,15 +9,15 @@ description = "Collect context, refreshing sources like RSS or YouTube etc."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+	"conduit",
     "feedparser>=6.0.12",
     "requests>=2.32.5",
-    "siphon"
 ]
 
 # ── uv sources (local/editable deps) ───────────────────────────────────────────
 [tool.uv.sources]
-siphon = { path = "../siphon-project", editable = true }
 dbclients = { path = "../dbclients-project", editable = true }
+conduit = { path = "../conduit-project", editable = true }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/aquifer"]
