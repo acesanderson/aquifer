@@ -96,7 +96,7 @@ Here is the question:
 def research(questions: list[str]) -> list[Response]:
     prompt = Prompt(prompt_stub)
     input_variables_list = [{"question": q} for q in questions]
-    model = ModelAsync("sonar-pro")
+    model = ModelAsync("gpt5")
     conduit = AsyncConduit(model=model, prompt=prompt)
     responses = conduit.run(
         input_variables_list=input_variables_list,
