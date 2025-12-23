@@ -10,8 +10,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
 	"conduit",
-    "feedparser>=6.0.12",
-    "requests>=2.32.5",
+	"feedparser>=6.0.12",
+	"requests>=2.32.5",
+	"requests-cache>=1.2.1",
 ]
 
 # ── uv sources (local/editable deps) ───────────────────────────────────────────
