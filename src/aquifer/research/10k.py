@@ -1,8 +1,7 @@
 import requests
 import requests_cache
 from pathlib import Path
-from pydantic import BaseModel, Field, computed_field
-from time import sleep
+from pydantic import BaseModel, Field
 from functools import cached_property
 from markdownify import markdownify as md
 from rich.console import Console
@@ -36,6 +35,12 @@ def is_valid_cik(cik: str) -> bool:
     return cik.isdigit() and len(cik) <= 10
 
 
+def normalize_cik(x) -> str:
+    if len(x.splitlines()) > 1:
+        x = x.splitlines()[0]
+    return str(x).strip().strip('"').strip("'")
+
+
 def get_cik(company_name: str) -> str:
     """
     Given a company name, return its Central Index Key (CIK) from the SEC.
@@ -47,10 +52,11 @@ def get_cik(company_name: str) -> str:
         input_variables={"company_name": company_name}, verbose=Verbosity.SILENT
     )
     assert isinstance(response, Response), f"Expected Response, got {type(response)}"
-    if is_valid_cik(str(response.content)):
-        return str(response.content)
+    cik = normalize_cik(str(response.content))
+    if is_valid_cik(cik):
+        return cik
     raise ValueError(
-        f"Invalid CIK returned for {company_name}: {response.content}. Are you sure this company is publicly traded?"
+        f"Invalid CIK returned for {company_name}: {cik}. Are you sure this company is publicly traded?"
     )
 
 
@@ -115,10 +121,14 @@ class Companies(BaseModel):
         return cls(companies=company_objs)
 
 
-def get_company_filing(company_name: str) -> SECFiling:
+def get_company_filings(company_name: str) -> list[SECFiling]:
     cik = get_cik(company_name)
     company = Company(name=company_name, cik=cik)
-    filings = company.filings
+    return company.filings
+
+
+def get_company_filing(company_name: str) -> SECFiling:
+    filings = get_company_filings(company_name)
     if filings:
         return filings[0]
     else:
@@ -126,8 +136,17 @@ def get_company_filing(company_name: str) -> SECFiling:
 
 
 if __name__ == "__main__":
-    company = "Coursera"
-    filing = get_company_filing(company)
-    print(f"Latest filing for {company} ({filing.date}):")
+    # filing = get_company_filing(company)
+    # print(f"Latest filing for {company} ({filing.date}):")
+    # print(filing.content)
     # companies = Companies.from_markdown(Path(__file__).parent / "10k_companies.md")
     # companies.companies[-1].filings[0].print()
+
+    # Get last two filings for Duolingo
+    company = "Duolingo"
+    filings = get_company_filings(company)
+    print("<filing1>")
+    filings[0].print()
+    print("</filing1>\n<filing2>")
+    filings[1].print()
+    print("</filing2>")

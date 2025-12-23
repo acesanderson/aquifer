@@ -11,5 +11,6 @@ __pycache__/
 .python-version
 *.log
 *.sqlite3
+*.sqlite
 .venv
 uv.lock
